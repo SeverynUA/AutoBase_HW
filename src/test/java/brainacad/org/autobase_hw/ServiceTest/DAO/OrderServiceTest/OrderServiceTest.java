@@ -1,9 +1,11 @@
-package brainacad.org.autobuse_.ServiceTest.DAO.OrderServiceTest;
+package brainacad.org.autobase_hw.ServiceTest.DAO.OrderServiceTest;
 
-import brainacad.org.autobase.DAO.InterfacesDAO.OrderDAO;
-import brainacad.org.autobase.Model.*;
-import brainacad.org.autobase.Service.OrderService.OrderService_Impl;
-import brainacad.org.autobase.ServiceTest.DAO.CRUDService_Interface;
+import brainacad.org.autobase_hw.InterfacesDAO.DriverDAO;
+import brainacad.org.autobase_hw.InterfacesDAO.OrderDAO;
+import brainacad.org.autobase_hw.Model.*;
+import brainacad.org.autobase_hw.Service.OrderService.OrderService_Impl;
+import brainacad.org.autobase_hw.ServiceTest.DAO.CRUDService_Abstract;
+import brainacad.org.autobase_hw.ServiceTest.DAO.CRUDService_Interface;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
@@ -13,7 +15,7 @@ import java.util.Optional;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
-public class OrderServiceTest implements CRUDService_Interface<Order>
+public class OrderServiceTest extends CRUDService_Abstract<Order, OrderDAO> implements CRUDService_Interface<Order>
 {
     private OrderDAO orderDAO;
     private OrderService_Impl orderService;
@@ -49,11 +51,11 @@ public class OrderServiceTest implements CRUDService_Interface<Order>
     @Override
     public void getById_ReturnsClass_WhenRequestExists()
     {
-        CargoType cargoType = CargoType.builder().name("Electronics").description("D").build();cargoType.setId(1L);
-        Driver driver = Driver.builder().fullName("John Doe").experience(5).payByKm(2.5).available(true).build();
-        Request request = Request.builder().startPoint("Point A").endPoint("Point B").cargoWeight(100.0).cargoType(cargoType).build();
-        Vehicle vehicle = Vehicle.builder().model("Truck").maxLoad(5000.0).available(true).broken(false).build();
-        Order order = Order.builder().driver(driver).request(request).vehicle(vehicle).build();
+        CargoType cargoType = CargoType.builder().id(1L).name("Electronics").description("D").build();cargoType.setId(1L);
+        Driver driver = Driver.builder().id(1L).fullName("John Doe").experience(5).payByKm(2.5).available(true).build();
+        Request request = Request.builder().id(1L).startPoint("Point A").endPoint("Point B").cargoWeight(100.0).cargoType(cargoType).build();
+        Vehicle vehicle = Vehicle.builder().id(1L).model("Truck").maxLoad(5000.0).available(true).broken(false).build();
+        Order order = Order.builder().id(1L).driver(driver).request(request).vehicle(vehicle).build();
 
         order.setId(1L);
 

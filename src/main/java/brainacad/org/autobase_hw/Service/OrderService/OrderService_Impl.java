@@ -1,7 +1,7 @@
-package brainacad.org.autobuse_.Service.OrderService;
+package brainacad.org.autobase_hw.Service.OrderService;
 
-import brainacad.org.autobase.DAO.InterfacesDAO.OrderDAO;
-import brainacad.org.autobase.Model.Order;
+import brainacad.org.autobase_hw.InterfacesDAO.OrderDAO;
+import brainacad.org.autobase_hw.Model.Order;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

@@ -1,4 +1,4 @@
-package brainacad.org.autobuse_.Model;
+package brainacad.org.autobase_hw.Model;
 
 import jakarta.persistence.*;
 import lombok.*;

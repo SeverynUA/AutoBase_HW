@@ -1,6 +1,6 @@
-package brainacad.org.autobuse_.ProfileTest;
+package brainacad.org.autobase_hw.ProfileTest;
 
-import brainacad.org.autobuse_.AutobuseApplication;
+import brainacad.org.autobase_hw.AutoBaseHwApplication;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -13,7 +13,7 @@ import org.springframework.test.context.ActiveProfiles;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-@SpringBootTest(classes = AutobuseApplication.class)
+@SpringBootTest(classes = AutoBaseHwApplication.class)
 @ActiveProfiles("test")
 public class ProfileTestWithTestProfile
 {
@@ -27,14 +27,6 @@ public class ProfileTestWithTestProfile
         String[] activeProfiles = environment.getActiveProfiles();
         System.out.println("Active profile: " + String.join(", ", activeProfiles));
         assertEquals("test", activeProfiles[0], "Active profile is not 'test'!");
-    }
-
-    @Test
-    void mainActiveProfile_ReturnProfile() {
-        System.setProperty("spring.profiles.active", "main");
-        String[] activeProfiles = environment.getActiveProfiles();
-        System.out.println("Active profile: " + String.join(", ", activeProfiles));
-        assertEquals("main", activeProfiles[0], "Active profile is not 'test'!");
     }
 
     @Test

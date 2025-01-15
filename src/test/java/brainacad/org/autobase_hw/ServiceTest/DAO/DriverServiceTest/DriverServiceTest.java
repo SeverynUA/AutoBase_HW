@@ -1,9 +1,12 @@
-package brainacad.org.autobuse_.ServiceTest.DAO.DriverServiceTest;
+package brainacad.org.autobase_hw.ServiceTest.DAO.DriverServiceTest;
 
-import brainacad.org.autobuse_.InterfacesDAO.DriverDAO;
-import brainacad.org.autobuse_.Model.Driver;
-import brainacad.org.autobuse_.Service.DriverService.DriverService_Impl;
-import brainacad.org.autobuse_.ServiceTest.DAO.CRUDService_Interface;
+import brainacad.org.autobase_hw.InterfacesDAO.CargoTypeDAO;
+import brainacad.org.autobase_hw.InterfacesDAO.DriverDAO;
+import brainacad.org.autobase_hw.Model.CargoType;
+import brainacad.org.autobase_hw.Model.Driver;
+import brainacad.org.autobase_hw.Service.DriverService.DriverService_Impl;
+import brainacad.org.autobase_hw.ServiceTest.DAO.CRUDService_Abstract;
+import brainacad.org.autobase_hw.ServiceTest.DAO.CRUDService_Interface;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
@@ -13,7 +16,7 @@ import java.util.Optional;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
-public class DriverServiceTest implements CRUDService_Interface<Driver>
+public class DriverServiceTest extends CRUDService_Abstract<Driver, DriverDAO> implements CRUDService_Interface<Driver>
 {
     private DriverDAO driverDAO;
     private DriverService_Impl driverService;
@@ -44,7 +47,7 @@ public class DriverServiceTest implements CRUDService_Interface<Driver>
     @Test
     public void getById_ReturnsClass_WhenRequestExists()
     {
-        Driver driver = Driver.builder().fullName("John Doe").experience(5).payByKm(2.5).available(true).build();
+        Driver driver = Driver.builder().id(1L).fullName("John Doe").experience(5).payByKm(2.5).available(true).build();
 
         when(driverDAO.findById(1L)).thenReturn(Optional.of(driver));
 

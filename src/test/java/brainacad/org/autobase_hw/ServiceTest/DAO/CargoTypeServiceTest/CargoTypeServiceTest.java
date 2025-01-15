@@ -1,9 +1,10 @@
-package brainacad.org.autobuse_.ServiceTest.DAO.CargoTypeServiceTest;
+package brainacad.org.autobase_hw.ServiceTest.DAO.CargoTypeServiceTest;
 
-import brainacad.org.autobuse_.InterfacesDAO.CargoTypeDAO;
-import brainacad.org.autobuse_.Model.CargoType;
-import brainacad.org.autobuse_.Service.CargoTypeService.CargoTypeService_Impl;
-import brainacad.org.autobuse_.ServiceTest.DAO.CRUDService_Interface;
+import brainacad.org.autobase_hw.InterfacesDAO.CargoTypeDAO;
+import brainacad.org.autobase_hw.Model.CargoType;
+import brainacad.org.autobase_hw.Service.CargoTypeService.CargoTypeService_Impl;
+import brainacad.org.autobase_hw.ServiceTest.DAO.CRUDService_Abstract;
+import brainacad.org.autobase_hw.ServiceTest.DAO.CRUDService_Interface;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
@@ -13,7 +14,7 @@ import java.util.Optional;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
-public class CargoTypeServiceTest implements CRUDService_Interface<CargoType>
+public class CargoTypeServiceTest extends CRUDService_Abstract<CargoType, CargoTypeDAO> implements CRUDService_Interface<CargoType>
 {
     private CargoTypeDAO cargoTypeDAO;
     private CargoTypeService_Impl cargoTypeService;
@@ -45,7 +46,7 @@ public class CargoTypeServiceTest implements CRUDService_Interface<CargoType>
     @Override
     public void getById_ReturnsClass_WhenRequestExists()
     {
-        CargoType cargoType = CargoType.builder().name("Electronics").description("D").build();
+        CargoType cargoType = CargoType.builder().id(1L).name("Electronics").description("D").build();
 
         when(cargoTypeDAO.findById(1L)).thenReturn(Optional.of(cargoType));
 

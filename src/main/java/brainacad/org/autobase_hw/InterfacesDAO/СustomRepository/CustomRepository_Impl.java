@@ -1,4 +1,4 @@
-package brainacad.org.autobuse_.InterfacesDAO.СustomRepository;
+package brainacad.org.autobase_hw.InterfacesDAO.СustomRepository;
 
 import jakarta.persistence.EntityManager;
 import org.springframework.beans.factory.annotation.Autowired;

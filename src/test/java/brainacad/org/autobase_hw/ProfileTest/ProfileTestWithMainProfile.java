@@ -1,6 +1,6 @@
-package brainacad.org.autobuse_.ProfileTest;
+package brainacad.org.autobase_hw.ProfileTest;
 
-import brainacad.org.autobuse_.AutobuseApplication;
+import brainacad.org.autobase_hw.AutoBaseHwApplication;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -13,7 +13,7 @@ import org.springframework.test.context.ActiveProfiles;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-@SpringBootTest(classes = AutobuseApplication.class)
+@SpringBootTest(classes = AutoBaseHwApplication.class)
 @ActiveProfiles("main")
 public class ProfileTestWithMainProfile
 {
@@ -25,7 +25,7 @@ public class ProfileTestWithMainProfile
     {
         String[] activeProfiles = environment.getActiveProfiles();
         System.out.println("Active profile: " + String.join(", ", activeProfiles));
-        assertEquals("main", activeProfiles[0], "Active profile is not 'test'!");
+        assertEquals("main", activeProfiles[0], "Active profile is not 'main'!");
     }
 
     @Test
@@ -35,7 +35,7 @@ public class ProfileTestWithMainProfile
         assertTrue(activeProfiles.length > 0, "No active profiles found!");
 
         // Проверим, что активный профиль — "test"
-        assertEquals("main", activeProfiles[0], "Active profile is not 'test'!");
+        assertEquals("main", activeProfiles[0], "Active profile is not 'main'!");
         System.out.println("Active profile: " + activeProfiles[0]);
     }
 

@@ -1,7 +1,7 @@
-package brainacad.org.autobuse_.Service.RequestService;
+package brainacad.org.autobase_hw.Service.RequestService;
 
-import brainacad.org.autobase.DAO.InterfacesDAO.RequestDAO;
-import brainacad.org.autobase.Model.Request;
+import brainacad.org.autobase_hw.InterfacesDAO.RequestDAO;
+import brainacad.org.autobase_hw.Model.Request;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

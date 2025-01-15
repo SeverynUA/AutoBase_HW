@@ -1,10 +1,14 @@
-package brainacad.org.autobuse_.ServiceTest.DAO.RequestServiceTest;
+package brainacad.org.autobase_hw.ServiceTest.DAO.RequestServiceTest;
 
-import brainacad.org.autobase.DAO.InterfacesDAO.RequestDAO;
-import brainacad.org.autobase.Model.CargoType;
-import brainacad.org.autobase.Model.Request;
-import brainacad.org.autobase.Service.RequestService.RequestService_Impl;
-import brainacad.org.autobase.ServiceTest.DAO.CRUDService_Interface;
+
+import brainacad.org.autobase_hw.InterfacesDAO.DriverDAO;
+import brainacad.org.autobase_hw.InterfacesDAO.RequestDAO;
+import brainacad.org.autobase_hw.Model.CargoType;
+import brainacad.org.autobase_hw.Model.Driver;
+import brainacad.org.autobase_hw.Model.Request;
+import brainacad.org.autobase_hw.Service.RequestService.RequestService_Impl;
+import brainacad.org.autobase_hw.ServiceTest.DAO.CRUDService_Abstract;
+import brainacad.org.autobase_hw.ServiceTest.DAO.CRUDService_Interface;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
@@ -14,7 +18,7 @@ import java.util.Optional;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
-public class RequestServiceTest implements CRUDService_Interface<Request>
+public class RequestServiceTest extends CRUDService_Abstract<Request, RequestDAO> implements CRUDService_Interface<Request>
 {
     private RequestDAO requestDAO;
     private RequestService_Impl requestService;

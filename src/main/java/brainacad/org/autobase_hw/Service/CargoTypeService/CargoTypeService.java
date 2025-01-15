@@ -1,7 +1,9 @@
-package brainacad.org.autobuse_.Service.CargoTypeService;
+package brainacad.org.autobase_hw.Service.CargoTypeService;
 
 
-import brainacad.org.autobuse_.Model.CargoType;
+
+
+import brainacad.org.autobase_hw.Model.CargoType;
 
 import java.util.List;
 

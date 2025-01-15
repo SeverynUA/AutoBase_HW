@@ -1,7 +1,6 @@
-package brainacad.org.autobuse_.Service.RequestService;
+package brainacad.org.autobase_hw.Service.RequestService;
 
-import brainacad.org.autobase.Model.Driver;
-import brainacad.org.autobase.Model.Request;
+import brainacad.org.autobase_hw.Model.Request;
 import org.springframework.boot.autoconfigure.cassandra.CassandraProperties;
 
 import java.util.List;

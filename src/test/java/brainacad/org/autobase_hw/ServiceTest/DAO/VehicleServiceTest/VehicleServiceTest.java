@@ -1,9 +1,12 @@
-package brainacad.org.autobuse_.ServiceTest.DAO.VehicleServiceTest;
+package brainacad.org.autobase_hw.ServiceTest.DAO.VehicleServiceTest;
 
-import brainacad.org.autobase.DAO.InterfacesDAO.VehicleDAO;
-import brainacad.org.autobase.Model.Vehicle;
-import brainacad.org.autobase.Service.VehicleService.VehicleService_Impl;
-import brainacad.org.autobase.ServiceTest.DAO.CRUDService_Interface;
+import brainacad.org.autobase_hw.InterfacesDAO.DriverDAO;
+import brainacad.org.autobase_hw.InterfacesDAO.VehicleDAO;
+import brainacad.org.autobase_hw.Model.Driver;
+import brainacad.org.autobase_hw.Model.Vehicle;
+import brainacad.org.autobase_hw.Service.VehicleService.VehicleService_Impl;
+import brainacad.org.autobase_hw.ServiceTest.DAO.CRUDService_Abstract;
+import brainacad.org.autobase_hw.ServiceTest.DAO.CRUDService_Interface;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
@@ -13,7 +16,7 @@ import java.util.Optional;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
-public class VehicleServiceTest implements CRUDService_Interface<Vehicle>
+public class VehicleServiceTest extends CRUDService_Abstract<Vehicle, VehicleDAO> implements CRUDService_Interface<Vehicle>
 {
     private VehicleDAO vehicleDAO;
     private VehicleService_Impl vehicleService;

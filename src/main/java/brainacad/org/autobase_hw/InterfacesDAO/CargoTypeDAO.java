@@ -1,8 +1,10 @@
-package brainacad.org.autobuse_.InterfacesDAO;
+package brainacad.org.autobase_hw.InterfacesDAO;
 
 
-import brainacad.org.autobuse_.InterfacesDAO.СustomRepository.CustomRepository;
-import brainacad.org.autobuse_.Model.CargoType;
+
+import brainacad.org.autobase_hw.InterfacesDAO.СustomRepository.CustomRepository;
+import brainacad.org.autobase_hw.Model.CargoType;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository

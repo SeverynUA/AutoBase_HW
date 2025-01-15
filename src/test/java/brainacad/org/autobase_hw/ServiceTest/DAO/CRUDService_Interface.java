@@ -1,18 +1,13 @@
-package brainacad.org.autobuse_.ServiceTest.DAO;
+package brainacad.org.autobase_hw.ServiceTest.DAO;
 
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface CRUDService_Interface<T>
 {
-    @BeforeAll
-    public static void checkDB()
-    {
-
-    }
-
     @BeforeEach
     public void setUp();
 
@@ -24,10 +19,4 @@ public interface CRUDService_Interface<T>
 
     @Test
     public void delete_DoesNotThrow_WhenRequestExists();
-
-    @AfterAll
-    public static void clearDB()
-    {
-
-    }
 }

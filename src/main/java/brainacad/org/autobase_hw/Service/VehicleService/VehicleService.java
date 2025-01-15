@@ -1,7 +1,6 @@
-package brainacad.org.autobuse_.Service.VehicleService;
+package brainacad.org.autobase_hw.Service.VehicleService;
 
-import brainacad.org.autobase.Model.Driver;
-import brainacad.org.autobase.Model.Vehicle;
+import brainacad.org.autobase_hw.Model.Vehicle;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package brainacad.org.autobuse_.InterfacesDAO.СustomRepository;
+package brainacad.org.autobase_hw.InterfacesDAO.СustomRepository;
 
 public interface CustomRepository<T> {
 
