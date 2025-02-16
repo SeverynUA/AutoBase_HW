@@ -1,8 +1,6 @@
 package brainacad.org.autobase_hw.ServiceTest.DAO.VehicleServiceTest;
 
-import brainacad.org.autobase_hw.InterfacesDAO.DriverDAO;
-import brainacad.org.autobase_hw.InterfacesDAO.VehicleDAO;
-import brainacad.org.autobase_hw.Model.Driver;
+import brainacad.org.autobase_hw.Repository.VehicleDAO;
 import brainacad.org.autobase_hw.Model.Vehicle;
 import brainacad.org.autobase_hw.Service.VehicleService.VehicleService_Impl;
 import brainacad.org.autobase_hw.ServiceTest.DAO.CRUDService_Abstract;

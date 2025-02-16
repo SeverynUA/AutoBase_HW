@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Редагувати запит</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body class="container mt-5">
+<h1>✏️ Редагувати запит</h1>
+
+<form th:action="@{/requests/edit/{id}(id=${request.id})}" method="post">
+    <input type="hidden" name="id" th:value="${request.id}">
+    <div class="mb-3">
+        <label for="startPoint" class="form-label">Пункт відправлення</label>
+        <input type="text" id="startPoint" name="startPoint" class="form-control" th:value="${request.startPoint}" required>
+    </div>
+    <div class="mb-3">
+        <label for="endPoint" class="form-label">Пункт прибуття</label>
+        <input type="text" id="endPoint" name="endPoint" class="form-control" th:value="${request.endPoint}" required>
+    </div>
+    <div class="mb-3">
+        <label for="cargoWeight" class="form-label">Вага вантажу</label>
+        <input type="number" id="cargoWeight" name="cargoWeight" class="form-control" th:value="${request.cargoWeight}" required>
+    </div>
+    <div class="mb-3">
+        <label for="cargoType" class="form-label">Тип вантажу</label>
+        <select id="cargoType" name="cargoType" class="form-control" required>
+            <option th:each="cargo : ${cargoTypes}" th:value="${cargo.id}" th:text="${cargo.name}"
+                    th:selected="${cargo.id == request.cargoType.id}"></option>
+        </select>
+    </div>
+    <button type="submit" class="btn btn-warning">💾 Зберегти</button>
+    <a href="/requests" class="btn btn-secondary">⬅ Повернутися</a>
+</form>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Деталі транспорту</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body class="container mt-5">
+<h1>👁️ Деталі транспорту</h1>
+
+<table class="table table-bordered">
+  <tr>
+    <th>ID</th>
+    <td th:text="${vehicle.id}"></td>
+  </tr>
+  <tr>
+    <th>Модель</th>
+    <td th:text="${vehicle.model}"></td>
+  </tr>
+  <tr>
+    <th>Максимальне навантаження</th>
+    <td th:text="${vehicle.maxLoad}"></td>
+  </tr>
+  <tr>
+    <th>Доступність</th>
+    <td th:text="${vehicle.available ? 'Так' : 'Ні'}"></td>
+  </tr>
+  <tr>
+    <th>Стан</th>
+    <td th:text="${vehicle.broken ? 'Зламаний' : 'Справний'}"></td>
+  </tr>
+</table>
+
+<a href="/vehicles" class="btn btn-secondary">⬅ Повернутися</a>
+</body>
+</html>

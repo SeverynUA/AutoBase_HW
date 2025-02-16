@@ -1,6 +1,6 @@
 package brainacad.org.autobase_hw.Service.CargoTypeService;
 
-import brainacad.org.autobase_hw.InterfacesDAO.CargoTypeDAO;
+import brainacad.org.autobase_hw.Repository.CargoTypeDAO;
 import brainacad.org.autobase_hw.Model.CargoType;
 import org.springframework.stereotype.Service;
 
@@ -57,4 +57,7 @@ public class CargoTypeService_Impl implements CargoTypeService
         }
         cargoTypeDAO.deleteById(id);
     }
+
+    @Override
+    public List<CargoType> findCargoTypesByName(String Name) {return cargoTypeDAO.findByName(Name);}
 }

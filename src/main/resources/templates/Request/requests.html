@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Список запитів</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body class="container mt-5">
+<h1>📄 Список запитів</h1>
+
+<form th:action="@{/requests/view}" method="get" class="mb-3">
+    <div class="input-group">
+        <input type="text" name="startPoint" th:value="${startPoint}" placeholder="Пошук за пунктом відправлення" class="form-control">
+        <button type="submit" class="btn btn-success">🔍 Пошук</button>
+    </div>
+</form>
+
+<a href="/requests/add" class="btn btn-primary mb-3">➕ Додати запит</a>
+
+<table class="table table-bordered">
+    <thead class="table-dark">
+    <tr>
+        <th>ID</th>
+        <th>Пункт відправлення</th>
+        <th>Пункт прибуття</th>
+        <th>Вага вантажу</th>
+        <th>Тип вантажу</th>
+        <th>Дії</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="request : ${requests}">
+        <td th:text="${request.id}"></td>
+        <td th:text="${request.startPoint}"></td>
+        <td th:text="${request.endPoint}"></td>
+        <td th:text="${request.cargoWeight}"></td>
+        <td th:text="${request.cargoType.name}"></td>
+        <td>
+            <a th:href="@{/requests/view/{id}(id=${request.id})}" class="btn btn-info">👁️ Перегляд</a>
+            <a th:href="@{/requests/edit/{id}(id=${request.id})}" class="btn btn-warning">✏️ Редагувати</a>
+            <a th:href="@{/requests/delete/{id}(id=${request.id})}" class="btn btn-danger"
+               onclick="return confirm('Ви впевнені, що хочете видалити цей запит?')">❌ Видалити</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

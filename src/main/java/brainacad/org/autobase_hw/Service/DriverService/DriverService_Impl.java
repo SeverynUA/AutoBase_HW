@@ -1,8 +1,9 @@
 package brainacad.org.autobase_hw.Service.DriverService;
 
-import brainacad.org.autobase_hw.InterfacesDAO.DriverDAO;
+import brainacad.org.autobase_hw.Repository.DriverDAO;
 import brainacad.org.autobase_hw.Model.Driver;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
@@ -62,4 +63,26 @@ public class DriverService_Impl implements DriverService
         }
         driverDAO.deleteById(id);
     }
+
+    @Override
+    public List<Driver> FindAllAvailableDrivers()
+    {
+        return driverDAO.findAllAvailableDrivers();
+    }
+
+    @Override
+    @Transactional
+    public Driver ChangeAvailableDriverById(Long id) {
+        int updatedRows = driverDAO.updateAvailability(id);
+
+        if (updatedRows == 0) {
+            throw new RuntimeException("Driver with ID " + id + " not found or already updated");
+        }
+
+        return driverDAO.findById(id)
+                .orElseThrow(() -> new RuntimeException("Driver with ID " + id + " not found"));
+    }
+
+    @Override
+    public List<Driver> FindByFullName(String fullName) {return driverDAO.findByFullName(fullName);}
 }

@@ -1,6 +1,6 @@
 package brainacad.org.autobase_hw.Service.OrderService;
 
-import brainacad.org.autobase_hw.InterfacesDAO.OrderDAO;
+import brainacad.org.autobase_hw.Repository.OrderDAO;
 import brainacad.org.autobase_hw.Model.Order;
 import org.springframework.stereotype.Service;
 

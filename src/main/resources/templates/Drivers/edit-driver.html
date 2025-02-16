@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Редагування водія</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body class="container mt-5">
+<h1>✏️ Редагування водія</h1>
+
+<form th:action="@{/drivers/edit/{id}(id=${driver.id})}"  th:object="${driver}" method="post">
+    <div class="mb-3">
+        <label class="form-label">Ім'я:</label>
+        <input type="text" class="form-control" th:field="*{fullName}" required>
+        <div class="text-danger" th:if="${#fields.hasErrors('fullName')}" th:errors="*{fullName}"></div>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Досвід (років):</label>
+        <input type="number" class="form-control" th:field="*{experience}" required>
+        <div class="text-danger" th:if="${#fields.hasErrors('experience')}" th:errors="*{experience}"></div>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Оплата за км:</label>
+        <input type="number" step="0.01" class="form-control" th:field="*{payByKm}" required>
+        <div class="text-danger" th:if="${#fields.hasErrors('payByKm')}" th:errors="*{payByKm}"></div>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Доступний:</label>
+        <select class="form-select" th:field="*{available}">
+            <option value="true">Так</option>
+            <option value="false">Ні</option>
+        </select>
+    </div>
+
+    <button type="submit" class="btn btn-success">💾 Зберегти</button>
+    <a href="/drivers/view" class="btn btn-secondary">🔙 Назад</a>
+</form>
+</body>
+</html>

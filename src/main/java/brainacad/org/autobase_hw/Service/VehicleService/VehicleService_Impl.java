@@ -1,6 +1,6 @@
 package brainacad.org.autobase_hw.Service.VehicleService;
 
-import brainacad.org.autobase_hw.InterfacesDAO.VehicleDAO;
+import brainacad.org.autobase_hw.Repository.VehicleDAO;
 import brainacad.org.autobase_hw.Model.Vehicle;
 import org.springframework.stereotype.Service;
 

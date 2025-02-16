@@ -3,14 +3,11 @@ package brainacad.org.autobase_hw.Service.OrderService;
 
 
 import brainacad.org.autobase_hw.Model.Order;
+import brainacad.org.autobase_hw.Service.DAO_Service;
 
 import java.util.List;
 
-public interface OrderService
+public interface OrderService extends DAO_Service<Order>
 {
-    Order create(Order order);
-    Order getById(Long id);
-    List<Order> getAll();
-    Order update(Long id, Order order);
-    void delete(Long id);
+
 }

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Список транспортних засобів</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body class="container mt-5">
+<h1>🚛 Список транспортних засобів</h1>
+
+<form th:action="@{/vehicles/view}" method="get" class="mb-3">
+    <div class="input-group">
+        <input type="text" name="model" th:value="${model}" placeholder="Пошук за моделлю" class="form-control">
+        <button type="submit" class="btn btn-success">🔍 Пошук</button>
+    </div>
+</form>
+
+<a href="/vehicles/add" class="btn btn-primary mb-3">➕ Додати транспорт</a>
+
+<table class="table table-bordered">
+    <thead class="table-dark">
+    <tr>
+        <th>ID</th>
+        <th>Модель</th>
+        <th>Макс. навантаження</th>
+        <th>Доступність</th>
+        <th>Стан</th>
+        <th>Дії</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="vehicle : ${vehicles}">
+        <td th:text="${vehicle.id}"></td>
+        <td th:text="${vehicle.model}"></td>
+        <td th:text="${vehicle.maxLoad}"></td>
+        <td th:text="${vehicle.available ? 'Так' : 'Ні'}"></td>
+        <td th:text="${vehicle.broken ? 'Зламаний' : 'Справний'}"></td>
+        <td>
+            <a th:href="@{/vehicles/view/{id}(id=${vehicle.id})}" class="btn btn-info">👁️ Перегляд</a>
+            <a th:href="@{/vehicles/edit/{id}(id=${vehicle.id})}" class="btn btn-warning">✏️ Редагувати</a>
+            <a th:href="@{/vehicles/delete/{id}(id=${vehicle.id})}" class="btn btn-danger"
+               onclick="return confirm('Ви впевнені, що хочете видалити цей транспорт?')">❌ Видалити</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

@@ -1,6 +1,6 @@
 package brainacad.org.autobase_hw.Service.RequestService;
 
-import brainacad.org.autobase_hw.InterfacesDAO.RequestDAO;
+import brainacad.org.autobase_hw.Repository.RequestDAO;
 import brainacad.org.autobase_hw.Model.Request;
 import org.springframework.stereotype.Service;
 

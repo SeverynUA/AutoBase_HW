@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Додати транспорт</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body class="container mt-5">
+<h1>➕ Додати транспорт</h1>
+
+<form th:action="@{/vehicles/add}" method="post">
+  <div class="mb-3">
+    <label for="model" class="form-label">Модель</label>
+    <input type="text" id="model" name="model" class="form-control" required>
+  </div>
+  <div class="mb-3">
+    <label for="maxLoad" class="form-label">Максимальне навантаження</label>
+    <input type="number" id="maxLoad" name="maxLoad" class="form-control" required>
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Доступність</label>
+    <select name="available" class="form-control">
+      <option value="true">Так</option>
+      <option value="false">Ні</option>
+    </select>
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Стан</label>
+    <select name="broken" class="form-control">
+      <option value="false">Справний</option>
+      <option value="true">Зламаний</option>
+    </select>
+  </div>
+  <button type="submit" class="btn btn-success">✅ Додати</button>
+  <a href="/vehicles" class="btn btn-secondary">⬅ Повернутися</a>
+</form>
+</body>
+</html>

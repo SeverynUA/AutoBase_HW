@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Список водіїв</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body class="container mt-5">
+<h1>🚚 Список водіїв</h1>
+
+<form th:action="@{/drivers/view}" method="get" class="mb-3">
+    <div class="input-group">
+        <input type="text" name="name" th:value="${name}" placeholder="Пошук за ім'ям" class="form-control">
+        <button type="submit" class="btn btn-success">🔍 Пошук</button>
+    </div>
+</form>
+
+<a href="/drivers/add" class="btn btn-primary mb-3">➕ Додати водія</a>
+
+<a href="/drivers/view/available" class="btn btn-secondary mb-3">🚦 Показати доступних</a>
+
+<table class="table table-bordered">
+    <thead class="table-dark">
+    <tr>
+        <th>ID</th>
+        <th>Ім'я</th>
+        <th>Досвід (років)</th>
+        <th>Оплата за км</th>
+        <th>Доступність</th>
+        <th>Дії</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="driver : ${drivers}">
+        <td th:text="${driver.id}"></td>
+        <td th:text="${driver.fullName}"></td>
+        <td th:text="${driver.experience}"></td>
+        <td th:text="${driver.payByKm}"></td>
+        <td th:text="${driver.available ? 'Так' : 'Ні'}"></td>
+        <td>
+            <a th:href="@{/drivers/toggle/{id}(id=${driver.id})}" class="btn btn-warning">
+                🔄 <span th:text="${driver.available ? 'Зробити зайнятим' : 'Зробити доступним'}"></span>
+            </a>
+
+            <a th:href="@{/drivers/edit/{id}(id=${driver.id})}" class="btn btn-info">✏️ Редагувати</a>
+
+            <a th:href="@{/drivers/delete/{id}(id=${driver.id})}" class="btn btn-danger"
+               onclick="return confirm('Ви впевнені, що хочете видалити цього водія?')">❌ Видалити</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

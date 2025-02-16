@@ -1,6 +1,6 @@
 package brainacad.org.autobase_hw.ServiceTest.DAO.CargoTypeServiceTest;
 
-import brainacad.org.autobase_hw.InterfacesDAO.CargoTypeDAO;
+import brainacad.org.autobase_hw.Repository.CargoTypeDAO;
 import brainacad.org.autobase_hw.Model.CargoType;
 import brainacad.org.autobase_hw.Service.CargoTypeService.CargoTypeService_Impl;
 import brainacad.org.autobase_hw.ServiceTest.DAO.CRUDService_Abstract;

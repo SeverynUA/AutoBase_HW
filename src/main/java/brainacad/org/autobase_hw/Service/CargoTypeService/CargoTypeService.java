@@ -14,4 +14,5 @@ public interface CargoTypeService
     List<CargoType> getAll();
     CargoType update(Long id, CargoType cargoType);
     void delete(Long id);
+    List<CargoType> findCargoTypesByName(String Name);
 }

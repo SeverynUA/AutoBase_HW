@@ -1,8 +1,6 @@
 package brainacad.org.autobase_hw.ServiceTest.DAO.DriverServiceTest;
 
-import brainacad.org.autobase_hw.InterfacesDAO.CargoTypeDAO;
-import brainacad.org.autobase_hw.InterfacesDAO.DriverDAO;
-import brainacad.org.autobase_hw.Model.CargoType;
+import brainacad.org.autobase_hw.Repository.DriverDAO;
 import brainacad.org.autobase_hw.Model.Driver;
 import brainacad.org.autobase_hw.Service.DriverService.DriverService_Impl;
 import brainacad.org.autobase_hw.ServiceTest.DAO.CRUDService_Abstract;
